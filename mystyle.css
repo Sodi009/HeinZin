@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #444;
+}
+
+header {
+  background: #000;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+.subtitle {
+  color: #67B82B;
+  margin: 5px 0 0 0;
+  font-size: 16px;
+}
+
+header h1 span {
+  color: #67B82B;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+  color: #67B82B;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.left,
+.right {
+  width: 250px;
+}
+
+.left img {
+  width: 100%;
+  border-radius: 10px;
+  border: 5px solid #eee;
+}
+
+.middle {
+  flex: 1;
+  min-width: 280px;
+}
+
+.middle h1 {
+  color: #67B82B;
+  margin-bottom: 5px;
+  font-size: 64px;  /* Increased size */
+  font-weight: bold;
+}
+
+.middle h2 {
+  color: #888;
+  margin-top: 0;
+}
+
+.middle p {
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.middle button {
+  margin-top: 20px;
+  background: #67B82B;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.middle button:hover {
+  background: #569924;
+}
+
+.right h3 {
+  color: #67B82B;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.right p,
+.right a {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .middle {
+    width: 100%;
+  }
+}
