@@ -1,119 +1,208 @@
-/* === Root Colors === */
-:root {
-  --bg: #0f1115;
-  --card: #151722;
-  --text: #ffffff;
-  --accent: #22d3ee;
-  --muted: #9aa4b3;
-  --radius: 12px;
+/* =========================================================
+   Hein Zin – Liquid Glass Theme (style.css)
+   ========================================================= */
+
+/* ---------- CSS Variables (Theme) ---------- */
+:root{
+  --bg1: #0e0f1a;
+  --bg2: #111428;
+  --accent: #8ad4ff;
+  --accent-2: #a88bff;
+  --text: #eaf2ff;
+  --muted: #a9b6cb;
+  --card-glass: rgba(255,255,255,0.10);
+  --card-border: rgba(255,255,255,0.35);
+  --maxw: 1100px;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ---------- Reset & Base ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100svh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+  color:var(--text);
+  background: radial-gradient(90vmax 90vmax at -10% -10%, #1b1e3f 0%, transparent 60%),
+              radial-gradient(90vmax 90vmax at 110% 10%, #1d1e39 0%, transparent 60%),
+              linear-gradient(120deg, var(--bg1), var(--bg2));
+  position:relative;
+  overflow-x:hidden;
+  line-height:1.6;
 }
 
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+/* Animated “liquid” blobs (no extra HTML needed) */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  inset:auto;
+  width:55vmax;height:55vmax;
+  background: radial-gradient(circle at 30% 30%, rgba(138,212,255,0.35), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(168,139,255,0.30), transparent 60%);
+  filter: blur(40px);
+  z-index:-1;
+  pointer-events:none;
+  animation: float 22s ease-in-out infinite;
+  transform: translate(-20%, -10%);
+}
+body::after{
+  width:60vmax;height:60vmax;
+  animation-duration: 28s;
+  transform: translate(55%, 30%);
+  opacity:.9;
+}
+@keyframes float{
+  0%,100%{ transform: translate(-10%, -5%) rotate(0deg) }
+  50%{ transform: translate(10%, 5%) rotate(10deg) }
 }
 
 /* Container */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem;
+.container{
+  width: min(92%, var(--maxw));
+  margin-inline:auto;
+  padding: 20px 0;
 }
 
-/* Header */
-header {
-  background: var(--card);
-  text-align: center;
-  padding: 3rem 1rem;
-  border-bottom: 2px solid var(--accent);
-}
-
-header h1 {
-  font-size: 2.5rem;
-  color: var(--accent);
-}
-
-header p {
-  font-size: 1.2rem;
-  color: var(--muted);
-  margin-top: 0.5rem;
-}
-
-/* Section */
-section {
-  margin: 2rem 0;
-}
-
-/* Smart Card */
-.smart-card {
-  background: linear-gradient(145deg, #1a1c26, #1f2230);
-  padding: 2rem;
+/* ---------- Glass Utility ---------- */
+.glass{
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
   border-radius: var(--radius);
-  border: 1px solid var(--accent);
-  box-shadow: 0 8px 20px rgba(34, 211, 238, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+/* Subtle light streak */
+.glass::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 30% 70%, rgba(255,255,255,0.06));
+  pointer-events:none;
 }
 
-.smart-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(34, 211, 238, 0.4);
+/* ---------- Header & Nav ---------- */
+header{
+  position: sticky; top:0; z-index:50;
+  padding: 18px 0 8px;
+  background: linear-gradient(180deg, rgba(10,12,24,0.75), rgba(10,12,24,0.35) 60%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.header-content{
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+header h1{ font-size: clamp(1.8rem, 1rem + 2.2vw, 2.6rem); letter-spacing:.5px }
+header p{ color: var(--muted) }
+
+/* Nav bar */
+nav{ width:100% }
+.navbar{
+  list-style:none;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+  margin-top:8px;
+}
+.navbar a{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  border:1px solid rgba(255,255,255,0.25);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s;
+}
+.navbar a:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  border-color: rgba(255,255,255,0.45);
+}
+.navbar a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
+
+/* ---------- Sections ---------- */
+section{ margin: 26px 0 }
+h2{
+  font-size: clamp(1.2rem, 0.9rem + 1vw, 1.6rem);
+  margin-bottom:12px;
+  font-weight:800;
+  letter-spacing:.3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter: drop-shadow(0 0 10px rgba(138,212,255,0.12));
 }
 
-/* Education Cards Grid */
-.edu-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+/* Cards */
+.smart-card{ padding:20px }
+.smart-card, .edu-card{ composes: glass } /* (for readability; next lines apply same) */
+.smart-card, .edu-card{
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-radius: var(--radius);
+  position:relative;
+  overflow:hidden;
 }
 
-.edu-card h3 {
-  font-size: 1.3rem;
-  color: var(--accent);
+/* About layout */
+.about-flex{
+  display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+}
+.profile-photo{
+  width:140px; height:140px; flex:0 0 auto;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45), 0 0 0 8px rgba(255,255,255,0.05) inset;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
 }
 
-.edu-card p {
-  color: var(--muted);
-  margin: 0.5rem 0;
+/* Education grid */
+.edu-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:18px;
+}
+.edu-card h3{ color:#e9f2ff; font-weight:700; margin-bottom:6px }
+.year{
+  display:inline-block; margin-top:8px; font-size:.9rem; color:var(--muted);
+  padding:4px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,0.25);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
 }
 
-.edu-card .year {
-  font-size: 0.9rem;
-  color: var(--accent);
-  font-weight: bold;
-}
-
-/* Contact List */
-.contact ul {
-  list-style: none;
-}
-
-.contact li {
-  margin: 0.5rem 0;
-}
-
-.contact a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
+/* Lists & Links */
+ul{ list-style: none }
+a{ color: var(--accent); text-decoration: none }
+a:hover{ text-decoration: underline }
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--card);
-  border-top: 2px solid var(--accent);
+footer{
+  margin-top: 28px;
+  padding: 18px 0;
+  text-align:center;
   color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(0deg, rgba(10,12,24,0.6), rgba(10,12,24,0.2));
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px){
+  .edu-grid{ grid-template-columns: 1fr }
+  .about-flex{ gap:14px }
+  .profile-photo{ width:120px; height:120px }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important }
 }
