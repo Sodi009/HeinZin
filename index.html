@@ -7,18 +7,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header with Navigation -->
   <header>
-    <div class="container">
+    <div class="container header-content">
       <h1>Hein Zin</h1>
       <p>Electrical & Computer Engineering Student</p>
+      <!-- Navigation Menu -->
+      <nav>
+        <ul class="navbar">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <!-- About Section -->
-  <section class="about container">
+  <section id="about" class="about container">
     <h2>About Me</h2>
-    <div class="smart-card">
+    <div class="smart-card about-flex">
+      <!-- Profile Photo -->
+      <img src="profile.jpg" alt="Hein Zin Photo" class="profile-photo">
       <p>
         I am <strong>Hein Zin</strong>, 24 years old (born on 10 April 2001).  
         Currently studying <strong>Electrical & Computer Engineering</strong> at <strong>Assumption University, Thailand</strong>.  
@@ -29,7 +41,7 @@
   </section>
 
   <!-- Education Section -->
-  <section class="education container">
+  <section id="education" class="education container">
     <h2>Education</h2>
     <div class="edu-grid">
       <div class="smart-card edu-card">
@@ -45,13 +57,33 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section id="skills" class="skills container">
+    <h2>Skills</h2>
+    <div class="smart-card">
+      <ul>
+        <li>Programming: Java, C, Python</li>
+        <li>Web Development: HTML, CSS, JavaScript</li>
+        <li>Electronics: Digital Circuits, Microcontrollers</li>
+        <li>Networking: CCNA fundamentals</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects container">
+    <h2>Projects</h2>
+    <div class="smart-card">
+      <p>Coming soon — My personal and academic projects will be added here.</p>
+    </div>
+  </section>
+
   <!-- Contact Section -->
-  <section class="contact container">
+  <section id="contact" class="contact container">
     <h2>Contact</h2>
     <div class="smart-card">
       <ul>
         <li>Email: <a href="mailto:heinzin.10401@gmail.com">heinzin.10401@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/" target="_blank">github.com/heinzin</a></li>
       </ul>
     </div>
   </section>
