@@ -1,96 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hein Zin - Personal Profile</title>
-  <link rel="stylesheet" href="mystyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hein Zin — Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="site.js"></script>
 </head>
 <body>
-  <!-- Header with Navigation -->
   <header>
     <div class="container header-content">
       <h1>Hein Zin</h1>
       <p>Electrical & Computer Engineering Student</p>
-      <!-- Navigation Menu -->
       <nav>
         <ul class="navbar">
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" data-nav>Home</a></li>
+          <li><a href="about.html" data-nav>About</a></li>
+          <li><a href="education.html" data-nav>Education</a></li>
+          <li><a href="skills.html" data-nav>Skills</a></li>
+          <li><a href="projects.html" data-nav>Projects</a></li>
+          <li><a href="contact.html" data-nav>Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="about container">
-    <h2>About Me</h2>
-    <div class="smart-card about-flex">
-      <!-- Profile Photo -->
-      <img src="HeinZin.jpg" alt="Hein Zin Photo" class="profile-photo">
-      <p>
-        I am <strong>Hein Zin</strong>, 24 years old (born on 10 April 2001).  
-        Currently studying <strong>Electrical & Computer Engineering</strong> at <strong>Assumption University, Thailand</strong>.  
-        I also hold a <strong>Diploma in Computer Science (Network Engineering)</strong> from <strong>Info Myanmar University</strong>.  
-        Passionate about technology, electronics, and software development, I am focused on building strong skills in engineering and computer systems.
-      </p>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="education container">
-    <h2>Education</h2>
-    <div class="edu-grid">
-      <div class="smart-card edu-card">
-        <h3>Assumption University, Thailand</h3>
-        <p>Bachelor of Engineering — Electrical & Computer Engineering</p>
-        <span class="year">2023 – Present</span>
+  <main class="container">
+    <section class="smart-card about-flex">
+      <img src="assets/images/profile.jpg" alt="Hein Zin" class="profile-photo"/>
+      <div>
+        <h2>Welcome</h2>
+        <p>
+          I’m <strong>Hein Zin</strong>, 24 (born 10 April 2001), studying
+          <strong>Electrical & Computer Engineering</strong> at
+          <strong>Assumption University, Thailand</strong>. Passionate about electronics,
+          software, and systems design.
+        </p>
       </div>
-      <div class="smart-card edu-card">
-        <h3>Info Myanmar University</h3>
-        <p>Diploma in Computer Science (Network Engineering)</p>
-        <span class="year">2019 – 2022</span>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills container">
-    <h2>Skills</h2>
-    <div class="smart-card">
-      <ul>
-        <li>Programming: Java, C, Python</li>
-        <li>Web Development: HTML, CSS, JavaScript</li>
-        <li>Electronics: Digital Circuits, Microcontrollers</li>
-        <li>Networking: CCNA fundamentals</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects container">
-    <h2>Projects</h2>
-    <div class="smart-card">
-      <p>Coming soon — My personal and academic projects will be added here.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact container">
-    <h2>Contact</h2>
-    <div class="smart-card">
-      <ul>
-        <li>Email: <a href="mailto:heinzin.10401@gmail.com">heinzin.10401@gmail.com</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Hein Zin. All rights reserved.</p>
-  </footer>
+  <footer><p>© 2025 Hein Zin. All rights reserved.</p></footer>
 </body>
 </html>
