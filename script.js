@@ -1,4 +1,3 @@
-
 (function(){
   const root = document.documentElement;
   function setIcon() {
