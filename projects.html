@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Hein Zin</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="site.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="container header-content">
-      <h1>Projects</h1>
-      <p>Things I built / I’m building</p>
-      <nav>
-        <ul class="navbar">
-          <li><a href="index.html" data-nav>Home</a></li>
-          <li><a href="about.html" data-nav>About</a></li>
-          <li><a href="education.html" data-nav>Education</a></li>
-          <li><a href="skills.html" data-nav>Skills</a></li>
-          <li><a href="projects.html" data-nav>Projects</a></li>
-          <li><a href="contact.html" data-nav>Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-dot"></span><span>Hein Zin — ECE Student</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="about.html">About</a>
+      <a class="cta" href="contact.html">Contact</a>
+      <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    </nav>
+  </div>
+</header>
   <main class="container">
-    <section class="smart-card">
-      <p>Coming soon — I’ll add my academic and personal projects here.</p>
+    <section>
+      <h1 class="section-title">Projects</h1>
+      <p class="section-sub">Hardware • Networks • Software</p>
+      <div class="chips" style="margin-bottom:14px">
+        <span class="chip">Embedded</span><span class="chip">Networks</span><span class="chip">Web</span><span class="chip">AI/ML</span><span class="chip">Coursework</span>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <img src="assets/cover-embed.jpg" alt="Embedded" />
+          <div class="card-body">
+            <h3>Seven‑Segment Stopwatch</h3>
+            <p>Verilog on CPLD, button debounce, reset, 1Hz clock.</p>
+            <a class="btn btn-ghost" href="project-detail.html">Open</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/cover-network.jpg" alt="Network" />
+          <div class="card-body">
+            <h3>RIP Branch Network</h3>
+            <p>Routing, VLANs, DHCP, and VoIP dialing plan.</p>
+            <a class="btn btn-ghost" href="project-detail.html">Open</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/cover-web.jpg" alt="Web" />
+          <div class="card-body">
+            <h3>Night Owl Bar</h3>
+            <p>Multi‑page site with booking, LINE API integration.</p>
+            <a class="btn btn-ghost" href="project-detail.html">Open</a>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
-
-  <footer><p>© 2025 Hein Zin. All rights reserved.</p></footer>
+  <footer>
+  <div class="container">Powered by <strong>Hein Zin</strong></div>
+</footer>
+  <script src="script.js"></script>
 </body>
 </html>
