@@ -1,78 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hein Zin — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Portfolio</title><link rel="stylesheet" href="style.css"/></head>
 <body>
-  <header>
-  <div class="container nav">
-    <a class="brand" href="index.html"><span class="brand-dot"></span><span>Hein Zin — ECE Student</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="about.html">About</a>
-      <a class="cta" href="contact.html">Contact</a>
-      <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-    </nav>
-  </div>
-</header>
+  
+    <header>
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Home"><span class="brand-dot"></span><span class="visually-hidden">Home</span></a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="about.html">About</a>
+          <a class="cta" href="contact.html">Contact</a>
+          <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+        </nav>
+      </div>
+    </header>
+    
   <main class="container">
     <section class="hero">
       <div>
         <span class="badge"><span class="spark"></span> Electrical & Computer Engineering Student</span>
-        <h1>Building things at the intersection of hardware, code, and networks.</h1>
-        <p class="section-sub">I design circuits, write software, and deploy connected systems. Explore my lab work, course projects, and personal builds.</p>
-        <div style="display:flex; gap:12px; margin-top:8px">
+        <h1 class="section-title">Hein Zin</h1>
+        <p class="section-sub">
+          B.Eng. Electrical & Computer Engineering — Assumption University of Thailand.<br/>
+          Diploma in Computer Science (Network Engineering) — Info Myanmar College.
+        </p>
+        <div class="chips" style="margin-bottom:12px">
+          <span class="chip">Embedded & MCU</span><span class="chip">Digital Logic</span><span class="chip">Networking</span><span class="chip">Web</span>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
           <a class="btn btn-primary" href="projects.html">View Projects</a>
-          <a class="btn btn-ghost" href="about.html">About Me</a>
+          <a class="btn btn-ghost" href="mailto:heinzin.10401@gmail.com">heinzin.10401@gmail.com</a>
         </div>
         <div class="kpis">
-          <div class="kpi"><div class="num">12+</div><div class="lbl">Completed projects</div></div>
-          <div class="kpi"><div class="num">4</div><div class="lbl">Hardware builds</div></div>
-          <div class="kpi"><div class="num">3</div><div class="lbl">Team collabs</div></div>
+          <div class="kpi"><div class="num">5</div><div class="lbl">Course projects</div></div>
+          <div class="kpi"><div class="num">Embedded</div><div class="lbl">MCU & Logic</div></div>
+          <div class="kpi"><div class="num">Networks</div><div class="lbl">RIP • VLAN • VoIP</div></div>
         </div>
       </div>
-      <div class="hero-card"><img src="assets/avatar.jpg" alt="Hein Zin portrait" /></div>
+      <div class="hero-card"><img src="assets/avatar.jpg" alt="Portrait" /></div>
     </section>
 
-    <section>
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-sub">Embedded, networks, and full‑stack experiments.</p>
-      <div class="grid grid-3">
-        <article class="card">
-          <img src="assets/cover-embed.jpg" alt="Embedded counter" />
-          <div class="card-body">
-            <h3>TTL 7493 Dual Counter on CPLD</h3>
-            <p>00→59 display on dual 7‑segment with reset & debounce.</p>
-            <a class="btn btn-ghost" href="project-detail.html">Read case study</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="assets/cover-network.jpg" alt="Network diagram" />
-          <div class="card-body">
-            <h3>Main ↔ Branch Office Network</h3>
-            <p>RIP routing, VLANs, and VoIP with Packet Tracer.</p>
-            <a class="btn btn-ghost" href="project-detail.html">Read case study</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="assets/cover-web.jpg" alt="Web app" />
-          <div class="card-body">
-            <h3>Night Owl Bar Website</h3>
-            <p>Responsive multi‑page site with booking and admin flow.</p>
-            <a class="btn btn-ghost" href="project-detail.html">Read case study</a>
-          </div>
-        </article>
-      </div>
-    </section>
+    
   </main>
-  <footer>
-  <div class="container">Powered by <strong>Hein Zin</strong></div>
-</footer>
+  
+    <footer>
+      <div class="container">Powered by <strong>Hein Zin</strong></div>
+    </footer>
+    
   <script src="script.js"></script>
 </body>
 </html>
