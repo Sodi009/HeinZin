@@ -1,63 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects — Hein Zin</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Projects</title><link rel="stylesheet" href="style.css"/></head>
 <body>
-  <header>
-  <div class="container nav">
-    <a class="brand" href="index.html"><span class="brand-dot"></span><span>Hein Zin — ECE Student</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="about.html">About</a>
-      <a class="cta" href="contact.html">Contact</a>
-      <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-    </nav>
-  </div>
-</header>
+  
+    <header>
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Home"><span class="brand-dot"></span><span class="visually-hidden">Home</span></a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="about.html">About</a>
+          <a class="cta" href="contact.html">Contact</a>
+          <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+        </nav>
+      </div>
+    </header>
+    
   <main class="container">
     <section>
       <h1 class="section-title">Projects</h1>
-      <p class="section-sub">Hardware • Networks • Software</p>
-      <div class="chips" style="margin-bottom:14px">
-        <span class="chip">Embedded</span><span class="chip">Networks</span><span class="chip">Web</span><span class="chip">AI/ML</span><span class="chip">Coursework</span>
-      </div>
+      <p class="section-sub">Hardware • Networks • Web</p>
       <div class="grid grid-3">
-        <article class="card">
-          <img src="assets/cover-embed.jpg" alt="Embedded" />
-          <div class="card-body">
-            <h3>Seven‑Segment Stopwatch</h3>
-            <p>Verilog on CPLD, button debounce, reset, 1Hz clock.</p>
-            <a class="btn btn-ghost" href="project-detail.html">Open</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="assets/cover-network.jpg" alt="Network" />
-          <div class="card-body">
-            <h3>RIP Branch Network</h3>
-            <p>Routing, VLANs, DHCP, and VoIP dialing plan.</p>
-            <a class="btn btn-ghost" href="project-detail.html">Open</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="assets/cover-web.jpg" alt="Web" />
-          <div class="card-body">
-            <h3>Night Owl Bar</h3>
-            <p>Multi‑page site with booking, LINE API integration.</p>
-            <a class="btn btn-ghost" href="project-detail.html">Open</a>
-          </div>
-        </article>
-      </div>
+<article class="card">
+  <img src="assets/cover-dld.jpg" alt="Digital Logic Design Project" />
+  <div class="card-body">
+    <h3>Digital Logic Design Project</h3>
+    <p>Counters • Decoders • 7‑segment</p>
+    <a class="btn btn-ghost" href="digital-logic-design.html">Open</a>
+  </div>
+</article>
+<article class="card">
+  <img src="assets/cover-traffic.jpg" alt="Electronic Lab — Traffic Light" />
+  <div class="card-body">
+    <h3>Electronic Lab — Traffic Light</h3>
+    <p>State machine • Timers • Safety intervals</p>
+    <a class="btn btn-ghost" href="electronic-lab-traffic-light.html">Open</a>
+  </div>
+</article>
+<article class="card">
+  <img src="assets/cover-telecom.jpg" alt="Telecommunications Network Lab — Main ↔ Branch" />
+  <div class="card-body">
+    <h3>Telecommunications Network Lab — Main ↔ Branch</h3>
+    <p>Routing • VLANs • VoIP</p>
+    <a class="btn btn-ghost" href="telecom-network-lab-main-branch.html">Open</a>
+  </div>
+</article>
+<article class="card">
+  <img src="assets/cover-nightowl.jpg" alt="Network Applications & Technology — Night Owl Bar" />
+  <div class="card-body">
+    <h3>Network Applications & Technology — Night Owl Bar</h3>
+    <p>Web app • Booking flow • Admin</p>
+    <a class="btn btn-ghost" href="network-apps-night-owl-bar.html">Open</a>
+  </div>
+</article>
+<article class="card">
+  <img src="assets/cover-mcu.jpg" alt="Microprocessors & Microcontrollers Project" />
+  <div class="card-body">
+    <h3>Microprocessors & Microcontrollers Project</h3>
+    <p>MCU I/O • Interrupts • Peripherals</p>
+    <a class="btn btn-ghost" href="microprocessors-microcontrollers.html">Open</a>
+  </div>
+</article></div>
     </section>
   </main>
-  <footer>
-  <div class="container">Powered by <strong>Hein Zin</strong></div>
-</footer>
+  
+    <footer>
+      <div class="container">Powered by <strong>Hein Zin</strong></div>
+    </footer>
+    
   <script src="script.js"></script>
 </body>
 </html>
