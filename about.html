@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Hein Zin</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="site.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="container header-content">
-      <h1>About Me</h1>
-      <p>Who I am & what I do</p>
-      <nav>
-        <ul class="navbar">
-          <li><a href="index.html" data-nav>Home</a></li>
-          <li><a href="about.html" data-nav>About</a></li>
-          <li><a href="education.html" data-nav>Education</a></li>
-          <li><a href="skills.html" data-nav>Skills</a></li>
-          <li><a href="projects.html" data-nav>Projects</a></li>
-          <li><a href="contact.html" data-nav>Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-dot"></span><span>Hein Zin — ECE Student</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="about.html">About</a>
+      <a class="cta" href="contact.html">Contact</a>
+      <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    </nav>
+  </div>
+</header>
   <main class="container">
-    <section class="smart-card about-flex">
-      <img src="HeinZin.jpg" alt="Hein Zin" class="profile-photo"/>
-      <p>
-        I am <strong>Hein Zin</strong>, an Electrical & Computer Engineering student at
-        <strong>Assumption University</strong>, with a Diploma in Computer Science
-        (Network Engineering) from <strong>Info Myanmar University</strong>.
-        I enjoy building things that merge hardware and software.
-      </p>
+    <section class="grid grid-2">
+      <div>
+        <h1 class="section-title">About Me</h1>
+        <p class="section-sub">Electrical & Computer Engineering student at Assumption University, Thailand. I enjoy building embedded systems, configuring networks, and creating clean user interfaces.</p>
+        <table class="table" style="margin-top:10px">
+          <tr><td>Location</td><td>Bangkok, Thailand</td></tr>
+          <tr><td>Focus</td><td>Embedded, Networks, Web</td></tr>
+          <tr><td>Status</td><td>Open to internships and collabs</td></tr>
+        </table>
+        <div style="margin-top:12px; display:flex; gap:10px">
+          <a class="btn btn-primary" href="#">Download Resume (PDF)</a>
+          <a class="btn btn-ghost" href="mailto:you@email.com">Email</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="section-title">Skills</h2>
+        <div class="chips">
+          <span class="chip">C / C++</span><span class="chip">Java</span><span class="chip">Verilog</span><span class="chip">Arduino</span>
+          <span class="chip">Packet Tracer</span><span class="chip">VLAN / RIP</span><span class="chip">Linux</span>
+          <span class="chip">HTML/CSS/JS</span><span class="chip">Git</span>
+        </div>
+        <h2 class="section-title" style="margin-top:18px">Education</h2>
+        <p>Assumption University — B.Eng. in Electrical & Computer Engineering</p>
+      </div>
     </section>
   </main>
-
-  <footer><p>© 2025 Hein Zin. All rights reserved.</p></footer>
+  <footer>
+  <div class="container">Powered by <strong>Hein Zin</strong></div>
+</footer>
+  <script src="script.js"></script>
 </body>
 </html>
