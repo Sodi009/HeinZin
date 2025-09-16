@@ -1,56 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Hein Zin</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-  <div class="container nav">
-    <a class="brand" href="index.html"><span class="brand-dot"></span><span>Hein Zin — ECE Student</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="about.html">About</a>
-      <a class="cta" href="contact.html">Contact</a>
-      <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-    </nav>
-  </div>
-</header>
-  <main class="container">
-    <section>
-      <h1 class="section-title">Get in touch</h1>
-      <p class="section-sub">Email is best. I usually reply within 24–48 hours.</p>
-      <form action="https://formspree.io/f/your-id" method="POST" class="grid grid-2">
-        <div>
-          <label for="name">Name</label>
-          <input id="name" class="input" name="name" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" class="input" type="email" name="email" required />
-        </div>
-        <div style="grid-column:1/-1">
-          <label for="msg">Message</label>
-          <textarea id="msg" class="input" rows="6" name="message" required></textarea>
-        </div>
-        <div>
-          <button class="btn btn-primary" type="submit">Send</button>
-        </div>
-      </form>
-
-      <div style="margin-top:18px">
-        <div class="section-sub">Elsewhere</div>
-        <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1'/><title>Contact</title><link rel='stylesheet' href='style.css'/></head><body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Home"><span class="brand-dot"></span><span class="visually-hidden">Home</span></a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="about.html">About</a>
+          <a class="cta" href="contact.html">Contact</a>
+          <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+        </nav>
       </div>
-    </section>
-  </main>
-  <footer>
-  <div class="container">Powered by <strong>Hein Zin</strong></div>
-</footer>
-  <script src="script.js"></script>
-</body>
-</html>
+    </header>
+    <main class='container'><section><h1 class='section-title'>Get in touch</h1><p class='section-sub'>Email is best. I usually reply within 24–48 hours.</p><form action='https://formspree.io/f/your-id' method='POST' class='grid grid-2'><div><label for='name'>Name</label><input id='name' class='input' name='name' required/></div><div><label for='email'>Email</label><input id='email' class='input' type='email' name='email' required/></div><div style='grid-column:1/-1'><label for='msg'>Message</label><textarea id='msg' class='input' rows='6' name='message' required></textarea></div><div><button class='btn btn-primary' type='submit'>Send</button></div></form></section></main>
+    <footer>
+      <div class="container">Powered by <strong>Hein Zin</strong></div>
+    </footer>
+    <script src='script.js'></script></body></html>
