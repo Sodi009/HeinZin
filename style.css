@@ -1,4 +1,6 @@
-/* ===== THEME VARIABLES ===== */
+/* =======================
+   THEME VARIABLES
+   ======================= */
 :root{
   /* Light */
   --bg:#f7f9fc; --panel:#ffffff; --panel-2:#f0f3f8; --text:#10131a; --muted:#5c6573;
@@ -7,6 +9,7 @@
   --header-bg: rgba(255,255,255,.78);
   --hover: rgba(0,0,0,.05);
   --footer-border: rgba(0,0,0,.08);
+  --header-h: 64px;           /* header height (desktop) */
 }
 :root.dark{
   /* Dark */
@@ -18,61 +21,98 @@
   --footer-border: rgba(255,255,255,.10);
 }
 
-/* ===== GLOBAL / LAYOUT ===== */
+/* =======================
+   GLOBAL / LAYOUT
+   ======================= */
 *{box-sizing:border-box; transition:background-color .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease, transform .25s ease}
 html,body{height:100%; margin:0}
 body{
   display:flex; flex-direction:column;
   color:var(--text); background:var(--bg);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Helvetica, Arial;
+  padding-top: calc(var(--header-h) + env(safe-area-inset-top)); /* reserve space for fixed header */
 }
 main{flex:1}
 a{color:inherit; text-decoration:none}
 img{max-width:100%; height:auto; display:block}
 .container{width:min(1120px,92%); margin-inline:auto}
 
-/* ===== HEADER / NAV ===== */
+/* =======================
+   FIXED HEADER / NAV
+   ======================= */
 header{
-  position:sticky; top:0; z-index:60;
+  position: fixed; top: 0; left: 0; right: 0;
+  height: calc(var(--header-h) + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top); /* iOS notch safe area */
+  z-index: 1000;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--footer-border);
   backdrop-filter: blur(10px);
-  background:var(--header-bg);
-  border-bottom:1px solid var(--footer-border);
+  -webkit-backdrop-filter: blur(10px);
 }
-.nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; flex-wrap:wrap}
+.nav{
+  height: var(--header-h);
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:0 .5rem;
+  flex-wrap:nowrap;
+}
 .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
 .brand-dot{width:10px;height:10px;border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2))}
-.nav nav{display:flex; align-items:center; gap:6px; flex-wrap:wrap}
-.nav a{opacity:.95; padding:8px 12px; border-radius:10px; font-weight:500}
+
+/* link row – desktop */
+.nav nav{
+  display:flex; align-items:center; gap:6px;
+  flex: 1 1 auto;
+  justify-content:flex-end;
+}
+/* make nav behave nicely on small screens without JS:
+   single-line, horizontally scrollable pill bar */
+.nav nav{
+  overflow-x:auto; white-space:nowrap; scrollbar-width:none;
+}
+.nav nav::-webkit-scrollbar{display:none}
+
+.nav a{opacity:.95; padding:8px 12px; border-radius:10px; font-weight:500; display:inline-block}
 .nav a:hover{background:var(--hover)}
 .nav .cta{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#121212; font-weight:800; box-shadow:0 6px 18px rgba(0,0,0,.1)}
-#themeToggle{border:none; background:none; cursor:pointer; font-size:18px; padding:8px; border-radius:10px}
+#themeToggle{border:none; background:none; cursor:pointer; font-size:18px; padding:8px; border-radius:10px; display:inline-block}
 #themeToggle:hover{background:var(--hover)}
 
-/* ===== SECTIONS / TYPO ===== */
+/* =======================
+   SECTIONS / TYPOGRAPHY
+   ======================= */
 section{padding:54px 0}
 .section-title{font-size:clamp(22px,3.6vw,34px); margin:0 0 6px; font-weight:800}
 .section-sub{color:var(--muted); margin:0 0 22px}
 
-/* ===== HERO ===== */
+/* =======================
+   HERO
+   ======================= */
 .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; padding:56px 0 16px}
 .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; background:var(--panel-2); border:1px solid var(--card-border); color:var(--muted); font-size:14px}
 .badge .spark{width:8px;height:8px;border-radius:3px;background:linear-gradient(135deg,var(--accent),#cfe6ff)}
 .lead{opacity:.92; font-size:18px}
 .hero-card{background:var(--panel); border:1px solid var(--card-border); padding:18px; border-radius:18px}
 
-/* ===== KPIs ===== */
+/* =======================
+   KPIs
+   ======================= */
 .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px}
 .kpi{background:var(--panel-2); border:1px solid var(--card-border); border-radius:14px; padding:16px; text-align:center}
 .kpi .num{font-weight:900; font-size:22px}
 .kpi .lbl{color:var(--muted); font-size:12px}
 
-/* ===== BUTTONS ===== */
+/* =======================
+   BUTTONS
+   ======================= */
 .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 14px; border-radius:14px; text-decoration:none; font-weight:700}
 .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#111}
 .btn-ghost{border:1px solid var(--card-border); color:var(--text); background:transparent}
 .btn:focus{outline:none; box-shadow:0 0 0 3px rgba(255,214,107,.35)}
 
-/* ===== GRIDS / CARDS ===== */
+/* =======================
+   GRIDS / CARDS
+   ======================= */
 .grid{display:grid; gap:18px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 .grid-2{grid-template-columns:repeat(2,1fr)}
@@ -82,40 +122,46 @@ section{padding:54px 0}
 .card h3{margin:0 0 8px}
 .card p{margin:0; color:var(--muted)}
 
-/* ===== FORMS ===== */
+/* =======================
+   FORMS
+   ======================= */
 .input, textarea{width:100%; background:var(--panel); color:var(--text); border:1px solid var(--card-border); padding:12px 12px; border-radius:12px}
 .input:focus, textarea:focus{outline:none; box-shadow:0 0 0 3px rgba(10,112,255,.25)}
 label{display:block; margin:12px 0 6px; color:var(--muted)}
 
-/* ===== CHIPS ===== */
+/* =======================
+   CHIPS & TABLE
+   ======================= */
 .chips{display:flex; gap:8px; flex-wrap:wrap}
 .chip{padding:6px 10px; border-radius:999px; background:var(--panel-2); border:1px solid var(--card-border); color:var(--muted); font-size:12px}
-
-/* ===== TABLE ===== */
 .table{width:100%; border-collapse:collapse}
 .table td{padding:10px 0; border-bottom:1px dashed var(--card-border)}
 .table td:first-child{color:var(--muted)}
 
-/* ===== FOOTER (MINIMAL) ===== */
+/* =======================
+   FOOTER (STICKY-BOTTOM)
+   ======================= */
 footer{text-align:center; padding:20px 0; font-size:14px; color:var(--muted); border-top:1px solid var(--footer-border)}
 
-/* ===== RESPONSIVE (NO HTML CHANGES NEEDED) ===== */
+/* =======================
+   RESPONSIVE
+   ======================= */
 @media (max-width:900px){
   .hero{grid-template-columns:1fr; gap:20px}
   .grid-3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
+  :root{ --header-h: 56px; }                 /* shorter header on phones */
   .container{width:min(680px,94%)}
   section{padding:40px 0}
   .kpis{grid-template-columns:1fr 1fr}
-  .nav{gap:6px}
-  .nav a{padding:8px 10px}
   .hero-card{padding:14px}
+  /* keep nav compact */
+  .nav a{padding:8px 10px}
 }
 @media (max-width:520px){
   .grid-3, .grid-2{grid-template-columns:1fr}
   .btn{width:100%; justify-content:center}
   .kpis{grid-template-columns:1fr}
-  .nav nav{gap:4px}
   .brand span:last-child{font-size:14px}
 }
